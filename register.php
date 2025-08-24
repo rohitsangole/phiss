@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "rohit";   // your MySQL username
-$password = "password";       // your MySQL password
+$password = "password"; // your MySQL password
 $dbname = "userDB";
 
 // Create connection
@@ -20,11 +20,15 @@ $pass = $_POST['password'];
 $sql = "INSERT INTO users (username, password) VALUES ('$user', '$pass')";
 
 if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully!";
+  // Redirect to welcome.html after successful login/registration
+  header("Location: welcome.html");
+  exit();
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();
 ?>
+
+
 
