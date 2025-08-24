@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";   // your MySQL username
-$password = "";       // your MySQL password
+$username = "rohit";   // your MySQL username
+$password = "password";       // your MySQL password
 $dbname = "userDB";
 
 // Create connection
@@ -27,3 +27,4 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 ?>
+
