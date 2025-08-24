@@ -1,16 +1,261 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login Page</title>
+  <meta charset="UTF-8">
+  <title>Rohit Sangole Game Yojana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Reset & base */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0f24, #001f3f, #002b55);
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(12px);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      background: linear-gradient(90deg, #00ffe7, #008cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00ffe7;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      color: #00ffe7;
+      margin-bottom: 10px;
+    }
+
+    /* Sections */
+    section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      background: linear-gradient(90deg, #ff6ec7, #00ffe7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .gallery img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 40px rgba(0,255,231,0.6);
+    }
+
+    /* Contact */
+    #contact p { text-align: center; font-size: 1.1rem; }
+
+    /* Login */
+    #login form {
+      background: rgba(255,255,255,0.08);
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+    }
+    #login input, #login button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+    }
+    #login input {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+    #login button {
+      background: linear-gradient(90deg, #00ffe7, #008cff);
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    #login button:hover {
+      transform: translateY(-2px);
+    }
+    #loginMsg {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* Dashboard */
+    #dashboard {
+      display: none;
+      background: rgba(255,255,255,0.08);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+    }
+    #dashboard h2 { margin-bottom: 15px; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.7);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header { flex-direction: column; text-align: center; }
+      nav { margin-top: 10px; }
+      .hero h2 { font-size: 1.5rem; }
+      h2 { font-size: 1.5rem; }
+    }
+  </style>
 </head>
 <body>
-  <h2>Login Form</h2>
-  <form action="register.php" method="POST">
-    <label>Username:</label>
-    <input type="text" name="username" required><br><br>
-    <label>Password:</label>
-    <input type="password" name="password" required><br><br>
-    <button type="submit">Submit</button>
-  </form>
+
+  <header>
+    <h1>Pradhan Mantri Game Yojana</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a href="#login">Login</a>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home" class="hero">
+    <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=80" alt="Sports Banner">
+    <h2>Welcome to Pradhan Mantri Game Yojana</h2>
+    <p>Promoting sports and fitness across India through government initiatives.</p>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About the Yojana</h2>
+    <p style="text-align:center;">The Pradhan Mantri Game Yojana is an initiative to empower youth, encourage sports participation, and provide infrastructure support for budding athletes across India.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Sports Gallery</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=600&q=80" alt="Cricket">
+      <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=600&q=80" alt="Football">
+      <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=600&q=80" alt="Hockey">
+      <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=600&q=80" alt="Athletics">
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@pmgyojana.in | Phone: +91-1800-123-456</p>
+  </section>
+
+  <!-- Login -->
+  <section id="login">
+    <h2>Login Form</h2>
+    <form id="loginForm">
+      <input type="text" id="loginUser" placeholder="Username" required>
+      <input type="password" id="loginPass" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <p id="loginMsg"></p>
+  </section>
+
+  <!-- Dashboard -->
+  <section id="dashboard">
+    <h2>Welcome <span id="userDisplay"></span> 🎉</h2>
+    <p>You are successfully logged in to the Pradhan Mantri Game Yojana Portal.</p>
+    <button onclick="logout()">Logout</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pradhan Mantri Game Yojana | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Dummy Login
+    document.getElementById("loginForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      let user = document.getElementById("loginUser").value;
+      let pass = document.getElementById("loginPass").value;
+      if(user && pass){ // Basic check
+        document.getElementById("loginMsg").innerText = "✅ Login successful!";
+        document.getElementById("dashboard").style.display = "block";
+        document.getElementById("userDisplay").innerText = user;
+        window.location.hash = "dashboard";
+      } else {
+        document.getElementById("loginMsg").innerText = "❌ Invalid username or password!";
+      }
+    });
+
+    function logout(){
+      document.getElementById("dashboard").style.display = "none";
+      document.getElementById("loginMsg").innerText = "You have logged out.";
+      window.location.hash = "login";
+    }
+  </script>
+
 </body>
 </html>
+
